@@ -9,6 +9,6 @@ the command is 'chmod a+x hello':allow us to change the permission for all the u
 the command is 'chmod 007 hello': allow us to take over the user and group permissios and give everyone all permissions.
 the command is 'chmod 753 hello': allow us to change the mode to look like this -rwxr-x-wx 1 julien julien 23 Sep 20 14:25 hello. 
 the command is 'chmod --reference=olleh hello': allow us to copy the permissions but not the file. 
-the command is 'chmod -R a+x /0x01-shell_permissions': allow us to adds execute permission to all subdirectories of the current directory for the owner, the group owner and all other users.
+the command is 'chmod -R a+X .': allow us to adds execute permission to all subdirectories of the current directory for the owner, the group owner and all other users.
 the command is 'mkdir -m 751 my_dir': allow us to create a directory called my_dir with permissions 751 in the working directory.
 the command is 'chgrp school hello': allow us to change ownership to school. 
