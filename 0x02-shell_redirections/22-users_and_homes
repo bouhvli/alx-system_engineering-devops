@@ -1,2 +1,2 @@
-#!/bis/bash
- cut -d: -f6 /etc/passwd
+#!/bin/bash
+ cut -d: -f1,6 /etc/passwd
