@@ -1,0 +1,2 @@
+#!/bbin/bash
+printf "%x\n" 16
