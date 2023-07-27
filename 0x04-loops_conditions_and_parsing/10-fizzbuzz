@@ -9,10 +9,10 @@ do
 		echo "FizzBuzz"
 	elif [ $divt -eq 0 ]
 	then
-		echo "fizz"
+		echo "Fizz"
 	elif [ $divf -eq 0 ]
 	then
-		echo "buzz"
+		echo "Buzz"
 	else
 		echo "$i"
 	fi
