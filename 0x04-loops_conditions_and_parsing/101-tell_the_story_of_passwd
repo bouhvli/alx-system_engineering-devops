@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times
+while IFS=: read -r usr psw ui gi uii hd cmd
+do
+	echo "The user $usr is part of the $gi gang, lives in $hd and rides $cmd. $ui's place is protected by the passcode $psw, more info about the user here: $uii"
+done < /etc/passwd
