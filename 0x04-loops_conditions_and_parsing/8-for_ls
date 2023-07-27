@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 # This script is displaying "Best School" 10 times
-find . -type f -not -path '*/\.*' | cut -d '-' -f 2
+for file in *;
+	do
+		if [[ $file != .* ]];
+		then
+			echo "$file" | cut -d '-' -f 2
+		fi
+	done
