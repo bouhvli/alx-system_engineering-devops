@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 # Bash script that displays its own PID.
-ps axjf
+ps -a -x -u -f
