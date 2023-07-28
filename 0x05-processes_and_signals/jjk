@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Main script
+
+echo "========== List of Currently Running Processes =========="
+echo "USER       PID  %CPU  %MEM    VSZ   RSS  TTY      STAT START   TIME COMMAND"
+echo "======================================================================="
+
+# Get a list of all processes for all users, including those without a TTY
+process_list=$(ps -eo user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command --sort=pid --all)
+
+# Loop through the process list and display each process
+while IFS= read -r process_info; do
+    echo "$process_info"
+done <<< "$process_list"
