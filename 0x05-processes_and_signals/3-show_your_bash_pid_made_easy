@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 # Bash script that displays its own PID.
-pgrep -a "bash" | awk '{print $1" "$2}'
+pgrep -l "bash"
