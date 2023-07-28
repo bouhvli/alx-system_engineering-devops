@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Bash script that displays its own PID.
+function fun(){
+	echo "I am invincible!!!"
+}
+trap fun SIGTERM
+while true;
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
