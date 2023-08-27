@@ -3,23 +3,34 @@
 design a three server web infrastructure that hosts the website www.foobar.com, it must be secured, serve encrypted traffic, and be monitored.
 ---
 ## specifications about the infrastructure:
-- What distribution algorithm your load balancer is configured with and how it works:
-    the algorithm used is Round robin because, since we have two servers the load should be destributed evenly between the two servers,
-    and it is the simplest because it checks the servers and select the next in line.
+- What are firewalls for:
+    limits the trafic, block, and filter unauthorized users, mainly firewalls used to protect the components it is installed on from
+    malwares, cyberattacks..., and by doing that it enhance the performance of the servers as an example.
 
-- Is your load-balancer enabling an Active-Active or Active-Passive setup, explain the difference between both:
-    our load balancer uses the active-active setup because we are using bouth servers to handle the (requests), we are not waiting for one server to break
-    to use the other (active-passive).
+- Why is the traffic served over HTTPS:
+    protect data form being accessed by unwanted entities by encrypting it only the sender and the reciever knows how to decrypt it because of the SSL certificat
+    established between the two.
 
-- How a database Primary-Replica (Master-Slave) cluster works:
-    database primary-replica enables the replication of the master database server data into a one or more database servers, if the main or the master
-    has changes the data in all the replicated DB servers (slaves) recieves the updates and return an output in seccess,
-    the replication can be synchronos or asynchronos.
+- What monitoring is used for:
+    it is used to detect unwanted behavoir from the hardware or software.
 
-- What is the difference between the Primary node and the Replica node in regard to the application:
-    since we are using the a load balancer and bout servers are functional in the real time, data must be present in bouth servers,
-    no matter what server the load balancer chooses the date will be there.
+- How the monitoring tool is collecting data
+    by collecting data from log files from servers, and analyse metrics from the system(CPU, Memory...) and send it to the monitoring system used.
+
+- Explain what to do if you want to monitor your web server QPS
+    collect the data, and configuring alerts in case of crashs to take actions.
 ## issues about the infrastructure:
-- the SPOF: the load balancer.
-- Security issues: may grant unauthorized access, hacker can access the data easaly, the servers can be infacted by malwares.
-- No monitoring: will make it diffecult to identify the issues incase of system failure.
+
+- Why terminating SSL at the load balancer level is an issue:
+    that means sacreficing the performance, because dycripting SSL trafic out of the Load Balancer reduce the latency of the request,
+    security, and the trafic will be vulnerble to attacks.
+    complexity, mean the need to manage the certificats on the LB and the web servers.
+
+- Why having only one MySQL server capable of accepting writes is an issue:
+    because the replicated data can not be updated if the master server is down we can not write into the replicated data.
+
+- Why having servers with all the same components (database, web server and application server) might be a problem:
+    if a server is hacked means that all the other at risque.
+    if any server is overloaded, all the servers will wait for it to finish.
+    by scaling the app, upgrading server components hardware or software will consume time and it is expansive.
+
