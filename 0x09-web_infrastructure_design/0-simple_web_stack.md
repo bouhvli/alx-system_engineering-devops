@@ -6,7 +6,7 @@ design a one server web infrastructure that hosts the website that is reachable 
 - What is a server: a program or a physical computer, runing an OS (windoes server, ubuntu ...) mostly located in a datacenter,
                       prvides other users with the requested files, data or computations ...
 - What is the role of the domain name: mainly to make easier for human being to remember IP address of each website.
-- What type of DNS record www is in www.foobar.com: the dns record used is A record.
+- What type of DNS record www is in www.foobar.com: the dns role is to translate the domaine name into IP using is A record .
 - What is the role of the web server: the role of a web-server is to respond to HTTP requests (deliver static web pages)
 - What is the role of the application server: host and execute application programs, and deliver dynamic webpages.
 - What is the role of the database: is to store, organize and manage data about the hosted applications.
