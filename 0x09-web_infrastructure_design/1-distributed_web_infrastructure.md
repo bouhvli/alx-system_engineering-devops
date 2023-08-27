@@ -1,5 +1,5 @@
 ![Task 0](https://github.com/bouhvli/alx-system_engineering-devops/blob/58f74096456807138a702916871723800402e630/0x09-web_infrastructure_design/task1.jpg)
-# Task 0:
+# Task 1:
 design a three server web infrastructure that hosts the website www.foobar.com.
 ---
 ## specifications about the infrastructure:
