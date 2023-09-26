@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # debugging project
+
 /etc/init.t/apache2 start
