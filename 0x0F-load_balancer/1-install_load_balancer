@@ -8,12 +8,12 @@ sudo cp -a /etc/haproxy/haproxy.cfg{,.orig}
 
 frontend="frontend front
     bind *:80
-    default_backend back_servers"
+    default_backend backservers"
 
-backend="backend back_servers
+backend="backend backservers
     balance roundrobin
-    server web_1 100.24.255.23:80 check
-    server web_2 54.234.80.214:80 check"
+    server 291203-web-01 100.24.255.23:80 check
+    server 291203-web-02 54.234.80.214:80 check"
 
 configurations="
 $frontend
