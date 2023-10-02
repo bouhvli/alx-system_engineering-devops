@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 # Configure Nginx so that its HTTP response contains a custom header
+sudo apt update
+sudo apt install -y nginx
+sudo ufw allow "Nginx HTTP"
+sudo chown -R $USER:$USER /var/www/
+redirect_me=\
+"\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}"
+sudo sed -i "60i\\$redirect_me" /etc/nginx/sites-enabled/default
+sudo touch /var/www/html/error404.html
+sudo echo "Ceci n'est pas une page" > /var/www/html/error404.html
+er404="\terror_page 404 /error404.html;"
+sudo sed -i "59i\\$er404" /etc/nginx/sites-enabled/default
 header="location \/ \{\n\t\tadd_header X-Served-By $HOSTNAME;"
 sudo sed -i "s/location \/ {/$header/" /etc/nginx/sites-enabled/default
 sudo service nginx restart
