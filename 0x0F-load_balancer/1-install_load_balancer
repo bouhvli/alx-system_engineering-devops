@@ -5,13 +5,19 @@ sudo apt-get -y install --no-install-recommends software-properties-common
 sudo add-apt-repository ppa:vbernat/haproxy-2.8
 sudo apt-get -y install haproxy=2.8.\*
 
-sudo echo 'frontend bouhvli.tech
+frontend="frontend front
     bind *:80
-    default_backend backservers
+    default_backend backservers"
 
-backend backservers
+backend="backend backservers
     balance roundrobin
     server 291203-web-01 100.24.255.23:80 check
     server 291203-web-02 54.234.80.214:80 check"
-' >> /etc/haproxy/haproxy.cfg
+
+configurations="
+$frontend
+
+$backend"
+
+sudo echo "$configurations" >> /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
