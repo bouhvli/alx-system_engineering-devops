@@ -20,5 +20,5 @@ $frontend
 
 $backend"
 
-echo "$configurations" | sudo tee -a /etc/haproxy/haproxy.cfg
+sudo echo "$configurations" >> /etc/haproxy/haproxy.cfg
 sudo service haproxy start
