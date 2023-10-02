@@ -2,7 +2,7 @@
 
 exec { 'update':
     provider => shell,
-    command  => 'apt.get update',
+    command  => 'apt-get update',
 }
 package { 'nginx':
     ensure  => 'installed'
