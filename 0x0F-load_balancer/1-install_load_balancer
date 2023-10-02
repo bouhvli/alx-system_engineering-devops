@@ -14,4 +14,4 @@ backend backservers
     server 291203-web-01 100.24.255.23:80 check
     server 291203-web-02 54.234.80.214:80 check"
 ' >> /etc/haproxy/haproxy.cfg
-sudo service haproxy start
+sudo service haproxy restart
