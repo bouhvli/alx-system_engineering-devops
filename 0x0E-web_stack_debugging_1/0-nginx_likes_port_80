@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 # this script Nginx run,listening on port 80
+rm /etc/nginx/sites-available/*
+rm /etc/nginx/sites-enabled/*~
 sed -i "s/8080/80/g" /etc/nginx/sites-enabled/default
 service nginx restart
