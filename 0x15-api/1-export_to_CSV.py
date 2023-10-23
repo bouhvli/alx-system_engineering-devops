@@ -27,5 +27,4 @@ def to_csv(argv):
 
 
 if __name__ == "__main__":
-    if len(argv) == 2:
-        to_csv(argv=argv[1])
+    to_csv(argv=argv[1])
