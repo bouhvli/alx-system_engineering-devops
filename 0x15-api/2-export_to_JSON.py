@@ -19,10 +19,10 @@ def to_json(argv):
 
     file_name = '{}.json'.format(argv)
 
-    task_dict = {}
     line = []
 
     for idx in range(0, len(json_dict)):
+        task_dict = {}
         task_dict['task'] = json_dict[idx]['title']
         task_dict['completed'] = json_dict[idx]['completed']
         task_dict['username'] = json_user['username']
@@ -31,7 +31,7 @@ def to_json(argv):
     user_task = {}
 
     user_task[json_user['id']] = line
-    object_json = json.dumps(user_task)
+    object_json = json.dumps(user_task, indent=4)
 
     with open(file_name, 'w') as json_f:
         json_f.write(object_json)
