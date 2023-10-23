@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """this model is my firt time using REST API"""
 import json
-from urllib import request
 from sys import argv
+from urllib import request
 
 
 def get_user(argv):
