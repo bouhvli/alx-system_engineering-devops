@@ -1,10 +1,12 @@
 #!/usr/bin/python3
+"""this model is my firt time using REST API"""
 from sys import argv
 import json
 from urllib import request
 
 
 def get_user(argv):
+    """this function do most of the job"""
     tsks_id = request.urlopen(
         'https://jsonplaceholder.typicode.com/todos?userId={}'.format(argv))
     user_name = request.urlopen(
