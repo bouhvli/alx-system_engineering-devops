@@ -1,15 +1,14 @@
 #!/usr/bin/python3
 """sumary_line
 """
+
 import requests
 
 
 def recurse(subreddit, hot_list=[], after=""):
     """sumary_line
     """
-    
-    if not subreddit or subreddit == "":
-        return None
+
     url = "https://api.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
     headers = {'User-Agent': 'Custom)'}
     response = requests.get(url, headers=headers, params={"after": after})
