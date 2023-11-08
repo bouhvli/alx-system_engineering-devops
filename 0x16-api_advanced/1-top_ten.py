@@ -5,12 +5,13 @@ import requests
 
 
 def top_ten(subreddit):
-    """sumary_line
+    """sumary_line sometimes by be good somtimes maybe s
     """
     
     url = "https://api.reddit.com/r/{}/hot.json".format(subreddit)
     headers = {'User-Agent': 'Custom)'}
-    response = requests.get(url, headers=headers, params={"limit": 10})
+    response = requests.get(url, headers=headers,
+                            params={"limit": 10}, allow_redirects=False)
 
     if response.status_code == 200:
         data = response.json()
