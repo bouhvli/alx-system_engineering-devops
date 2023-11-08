@@ -7,7 +7,7 @@ import requests
 def top_ten(subreddit):
     """sumary_line sometimes by be good somtimes maybe s
     """
-    
+
     url = "https://api.reddit.com/r/{}/hot.json".format(subreddit)
     headers = {'User-Agent': 'Custom)'}
     response = requests.get(url, headers=headers,
