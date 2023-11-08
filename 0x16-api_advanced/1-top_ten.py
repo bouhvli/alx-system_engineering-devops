@@ -9,7 +9,7 @@ def top_ten(subreddit):
     """
     
     url = "https://api.reddit.com/r/{}/hot.json".format(subreddit)
-    headers = {'User-Agent': 'Bouhvli)'}
+    headers = {'User-Agent': 'Custom)'}
     response = requests.get(url, headers=headers, params={"limit": 10})
 
     if response.status_code == 200:
@@ -19,4 +19,4 @@ def top_ten(subreddit):
             title = post['data']['title']
             print(title)
     else:
-        print("None")
+        print(None)
